@@ -48,10 +48,10 @@ import io.github.bonigarcia.wdm.PhantomJsDriverManager;
 public class PhatomJsTest3 {
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-//		PhantomJsDriverManager.getInstance().setup();
-//		WebDriver driver = new PhantomJSDriver();
-		ChromeDriverManager.getInstance().setup();
-		WebDriver driver = new ChromeDriver();
+		PhantomJsDriverManager.getInstance().setup();
+		WebDriver driver = new PhantomJSDriver();
+//		ChromeDriverManager.getInstance().setup();
+//		WebDriver driver = new ChromeDriver();
 		driver.manage().window().setSize(new Dimension(1024,768));
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
