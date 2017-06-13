@@ -18,13 +18,9 @@
 package io.github.bonigarcia.wdm;
 
 import java.awt.AWTException;
-import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
@@ -69,9 +65,9 @@ public class PhatomJsTest3 {
 	//    r.keyRelease(KeyEvent.VK_ENTER);
 		
 		Thread.sleep(5000);
-		File scrFile = ((TakesScreenshot) driver)
-				.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
+		//File scrFile = ((TakesScreenshot) driver)
+		//		.getScreenshotAs(OutputType.FILE);
+		//FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
 		if (driver != null) {
 		  driver.quit();
 		}
