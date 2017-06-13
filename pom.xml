@@ -44,6 +44,28 @@
         <maven.compiler.argument.target>${maven.compiler.target}</maven.compiler.argument.target>
         <maven.compiler.argument.source>${maven.compiler.source}</maven.compiler.argument.source>
     </properties>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+				  <groupId>org.codehaus.mojo</groupId>
+				  <artifactId>exec-maven-plugin</artifactId>
+				  <version>1.2.1</version>
+				  <executions>
+					<execution>
+					  <goals>
+						<goal>java</goal>
+					  </goals>
+					</execution>
+				  </executions>
+				  <configuration>
+					<mainClass>io.github.bonigarcia.wdm.PhatomJsTest3</mainClass>
+				  </configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
     <dependencies>
         <dependency>
