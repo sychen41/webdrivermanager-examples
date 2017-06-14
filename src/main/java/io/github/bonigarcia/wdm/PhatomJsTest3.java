@@ -56,7 +56,7 @@ public class PhatomJsTest3 {
 		options.addArguments("no-sandbox");
 		options.addArguments("disable-gpu");
 		WebDriver driver = new ChromeDriver(options);
-		driver.manage().window().setSize(new Dimension(1024,768));
+//		driver.manage().window().setSize(new Dimension(1024,768));
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 
