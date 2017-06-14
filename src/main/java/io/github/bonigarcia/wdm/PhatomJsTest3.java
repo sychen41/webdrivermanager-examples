@@ -19,8 +19,11 @@ package io.github.bonigarcia.wdm;
 
 import java.awt.AWTException;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Keys;
@@ -28,6 +31,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -47,7 +51,11 @@ public class PhatomJsTest3 {
 //		PhantomJsDriverManager.getInstance().setup();
 //		WebDriver driver = new PhantomJSDriver();
 		ChromeDriverManager.getInstance().setup();
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("headless");
+		options.addArguments("no-sandbox");
+		options.addArguments("disable-gpu");
+		WebDriver driver = new ChromeDriver(options);
 		driver.manage().window().setSize(new Dimension(1024,768));
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
@@ -65,10 +73,11 @@ public class PhatomJsTest3 {
 	//    r.keyRelease(KeyEvent.VK_ENTER);
 		
 		Thread.sleep(5000);
-		//File scrFile = ((TakesScreenshot) driver)
-		//		.getScreenshotAs(OutputType.FILE);
-		//FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
+//		File scrFile = ((TakesScreenshot) driver)
+//				.getScreenshotAs(OutputType.FILE);
+//		FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
 		if (driver != null) {
+			System.out.println("quitting...");
 		  driver.quit();
 		}
 	}
