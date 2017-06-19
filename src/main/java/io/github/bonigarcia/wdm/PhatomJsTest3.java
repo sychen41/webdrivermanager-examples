@@ -73,9 +73,9 @@ public class PhatomJsTest3 {
 	//    r.keyRelease(KeyEvent.VK_ENTER);
 		
 		Thread.sleep(5000);
-//		File scrFile = ((TakesScreenshot) driver)
-//				.getScreenshotAs(OutputType.FILE);
-//		FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
+		File scrFile = ((TakesScreenshot) driver)
+				.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File(("screenshot.jpg")));
 		if (driver != null) {
 			System.out.println("quitting...");
 		  driver.quit();
